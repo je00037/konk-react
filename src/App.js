@@ -3,11 +3,11 @@ import './App.css';
 import AppContent from './AppContent.js';
 import GrandDesignsHeader from './GrandDesignsHeader.js';
 
-function App() {
+const App = () => {
   return (
     <div>
-    <GrandDesignsHeader />
-    <AppContent />
+      <GrandDesignsHeader />
+      <AppContent />
     </div>
   );
 }
