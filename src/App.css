@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #4daa5d;
+  background-color: #efeff1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
 }
 
 .Gd-header {
-  background-color: #4daa5d;
+  background-color: #efeff1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,11 +40,34 @@
   max-width: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Kev-container {
+  background-color: #efeff1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 25%;
+}
+
+.Kev-image {
+  max-width: 50%;
+  animation: kevpulse 2.5s infinite;
+  -webkit-animation: kevpulse 2.5s infinite;
+}
+
+@keyframes kevpulse {
+  0%, 100% {-webkit-transform: scale(1)}
+  50% {-webkit-transform: scale(0.9)}
+}
+
+@-webkit-keyframes kevpulse {
+  0%, 100% {-webkit-transform: scale(1)}
+  50% {-webkit-transform: scale(0.9)}
 }
