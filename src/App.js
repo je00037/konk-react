@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import AppContent from './AppContent.js';
+import GrandDesignsHeader from './GrandDesignsHeader.js';
 
-function App() {
+const App = () => {
   return (
-    <AppContent />
+    <div>
+      <GrandDesignsHeader />
+      <AppContent />
+    </div>
   );
 }
 
