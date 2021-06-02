@@ -62,6 +62,8 @@
   -webkit-animation: kevpulse 2.5s infinite;
 }
 
+/* image of kev is resizing with each render, bit weird - try to fix */
+
 @keyframes kevpulse {
   0%, 100% {-webkit-transform: scale(1)}
   50% {-webkit-transform: scale(0.9)}
