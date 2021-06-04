@@ -69,11 +69,11 @@ const quotes = [
     }
   ];
 
-function randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+const randomInteger = (min, max) => 
+    Math.floor(Math.random() * (max - min + 1)) + min;
+  
 
-function getQuote(arr) {
+const getQuote = (arr) => {
     let randomIndex = randomInteger(1, quotes.length - 1);
     let randomQuote = arr[randomIndex];
     return randomQuote;
