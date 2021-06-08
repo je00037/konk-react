@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import StartButton from './StartButton';
 import './App.css';
 
 const quotes = [
@@ -89,6 +90,7 @@ const QuoteContainer = () => {
   return (
         <div className="Quote-container">
             <p className="Quote-text">{quote}</p>
+            <StartButton changeTheQuote={setQuote}/>
         </div>
     );
 }

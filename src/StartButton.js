@@ -1,9 +1,9 @@
 import './App.css';
 
-const StartButton = () => {
+const StartButton = (props) => {
     return (
         <div>
-            <button>Get a quote</button>
+            <button onClick={() => props.changeTheQuote("This is the new quote")}>Get a quote</button>
         </div>
     )
 }
