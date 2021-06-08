@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 
 const quotes = [
@@ -81,12 +82,13 @@ const getQuote = (arr) => {
 
 const newQuote = getQuote(quotes);
 
-/* the getQuote function and the newQuote variable feel like they could be consolidated into one thing...*/
+/* the getQuote function and the newQuote variable feel like they could be consolidated into one thing...??*/
 
 const QuoteContainer = () => {
-    return (
+  const [quote, setQuote] = useState("Press the button for a quote!");  
+  return (
         <div className="Quote-container">
-            <p className="Quote-text">{newQuote.quotation}</p>
+            <p className="Quote-text">{quote}</p>
         </div>
     );
 }
