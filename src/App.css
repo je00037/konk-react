@@ -1,35 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #efeff1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .Gd-header {
-  background-color: #efeff1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +17,6 @@
 }
 
 .Kev-container {
-  background-color: #efeff1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,12 +25,10 @@
 }
 
 .Kev-image {
-  max-width: 50%;
+  width: 50%;
   animation: kevpulse 2.5s infinite;
   -webkit-animation: kevpulse 2.5s infinite;
 }
-
-/* image of kev is resizing with each render, bit weird - try to fix */
 
 @keyframes kevpulse {
   0%, 100% {-webkit-transform: scale(1)}
@@ -72,4 +38,18 @@
 @-webkit-keyframes kevpulse {
   0%, 100% {-webkit-transform: scale(1)}
   50% {-webkit-transform: scale(0.9)}
+}
+
+.Quote-container {
+  width: 75%;
+  text-align: center;
+}
+
+.Quote-text {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family: "Source Serif Pro";
+  font-weight: 200;
+  font-style: italic;
+  font-size: 2rem;
 }

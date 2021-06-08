@@ -85,8 +85,8 @@ const newQuote = getQuote(quotes);
 
 const QuoteContainer = () => {
     return (
-        <div>
-            <p>{newQuote.quotation}</p>
+        <div className="Quote-container">
+            <p className="Quote-text">{newQuote.quotation}</p>
         </div>
     );
 }
