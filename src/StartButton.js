@@ -1,9 +1,10 @@
+import newQuote from './quoteGenerator';
 import './App.css';
 
 const StartButton = (props) => {
     return (
         <div>
-            <button onClick={() => props.changeTheQuote("This is the new quote")}>Get a quote</button>
+            <button onClick={() => props.changeTheQuote({newQuote})}>Get a quote</button>
         </div>
     )
 }
