@@ -77,8 +77,8 @@ const getQuote = (arr) => {
     return randomQuote.quotation;
   }
 
-const newQuote = getQuote(quotes);
-console.log(newQuote);
-console.log(typeof newQuote);
+const newQuote = () => getQuote(quotes);
+
+
 
 export default newQuote;
