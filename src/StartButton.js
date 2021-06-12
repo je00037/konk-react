@@ -4,7 +4,7 @@ import './App.css';
 const StartButton = (props) => {
     return (
         <div>
-            <button onClick={() => props.changeTheQuote({newQuote})}>Get a quote</button>
+            <button onClick={() => props.changeTheQuote(newQuote)}>Get a quote</button>
         </div>
     )
 }

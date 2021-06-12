@@ -78,5 +78,7 @@ const getQuote = (arr) => {
   }
 
 const newQuote = getQuote(quotes);
+console.log(newQuote);
+console.log(typeof newQuote);
 
 export default newQuote;
