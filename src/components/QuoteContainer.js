@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import StartButton from './StartButton';
-import './App.css';
+import StartButton from './StartButton.js';
+import '../css/App.css';
 
 const QuoteContainer = () => {
   const [quote, setQuote] = useState("Press the button for a quote!");  

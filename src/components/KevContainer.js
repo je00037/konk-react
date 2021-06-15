@@ -1,5 +1,5 @@
-import kev from "./kev.png";
-import './App.css';
+import kev from "../images/kev.png";
+import '../css/App.css';
 
 const KevContainer = () => {
     return (

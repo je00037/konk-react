@@ -1,5 +1,5 @@
-import newQuote from './quoteGenerator';
-import './App.css';
+import newQuote from '../utils/quoteGenerator';
+import '../css/App.css';
 
 const StartButton = (props) => {
     return (

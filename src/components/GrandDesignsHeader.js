@@ -1,5 +1,5 @@
-import gd from "./gd.png";
-import './App.css';
+import gd from "../images/gd.png";
+import '../css/App.css';
 
 const GrandDesignsHeader = () => {
     return (
