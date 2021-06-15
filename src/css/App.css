@@ -46,6 +46,14 @@
   text-align: center;
 }
 
+.Quote-text-container {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .Quote-text {
   margin-left: 2rem;
   margin-right: 2rem;

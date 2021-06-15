@@ -8,7 +8,9 @@ const QuoteContainer = () => {
   const [quote, setQuote] = useState("Press the button for a quote...");  
   return (
         <div className="Quote-container">
-            <p className="Quote-text">{quote}</p>
+            <div className="Quote-text-container">
+                <p className="Quote-text">{quote}</p>
+            </div>
             <StartButton currentQuote={quote} changeTheQuote={setQuote}/>
             <ItsKevButton />
             <NotKevButton />
