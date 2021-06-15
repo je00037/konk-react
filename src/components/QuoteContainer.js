@@ -7,7 +7,7 @@ const QuoteContainer = () => {
   return (
         <div className="Quote-container">
             <p className="Quote-text">{quote}</p>
-            <StartButton changeTheQuote={setQuote}/>
+            <StartButton currentQuote={quote} changeTheQuote={setQuote}/>
         </div>
     );
 }
