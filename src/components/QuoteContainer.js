@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import StartButton from './StartButton.js';
+import ItsKevButton from './ItsKevButton.js';
+import NotKevButton from './NotKevButton.js';
 import '../css/App.css';
 
 const QuoteContainer = () => {
@@ -8,6 +10,8 @@ const QuoteContainer = () => {
         <div className="Quote-container">
             <p className="Quote-text">{quote}</p>
             <StartButton currentQuote={quote} changeTheQuote={setQuote}/>
+            <ItsKevButton />
+            <NotKevButton />
         </div>
     );
 }
