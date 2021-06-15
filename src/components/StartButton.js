@@ -22,4 +22,7 @@ const StartButton = (props) => {
 
 export default StartButton;
 
-/* why do I need to pass a function which accesses the prop to the click handler, instead of just passing the prop itself? */
+/* why do I need to pass a function which accesses the prop to the click handler, instead of just passing the prop itself?
+and can i declare that function somewhere else in either the component or file so i can just pass the function name instead of 
+the full function?
+*/
