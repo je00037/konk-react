@@ -15,7 +15,7 @@ const StartButton = (props) => {
 
     return (
         <div>
-            <button onClick={() => {props.changeTheQuote(nextQuote)}}>Get a quote</button>
+            <button className="Button Button-orange" onClick={() => {props.changeTheQuote(nextQuote)}}>Let's go!</button>
         </div>
     )
 }
