@@ -1,7 +1,7 @@
 import '../css/App.css';
 import newQuote from '../utils/quoteGenerator';
 
-const StartButton = ({currentQuoteProp, setQuoteProp, currentAuthorProp, setAuthorProp}) => {
+const StartButton = ({currentQuoteProp, setQuoteProp, setAuthorProp}) => {
 
     const handleClick = (event) => {
         let quoteObject;

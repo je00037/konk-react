@@ -8,16 +8,18 @@ import '../css/App.css';
 const QuoteContainer = () => {
   const [currentQuote, setQuote] = useState("Press the button for a quote...");
   const [currentAuthor, setAuthor] = useState("not an author");
-  console.log(currentAuthor);
+
+  let authorLabel = document.getElementById("author-label");
 
   return (
         <div className="Quote-container">
             <div className="Quote-text-container">
                 <p className="Quote-text">{currentQuote}</p>
+                <div id="author-label"></div>
             </div>
-            <StartButton currentQuoteProp={currentQuote} setQuoteProp={setQuote} currentAuthorProp={currentAuthor} setAuthorProp={setAuthor} />
-            <ItsKevButton />
-            <NotKevButton />
+            <StartButton currentQuoteProp={currentQuote} setQuoteProp={setQuote} setAuthorProp={setAuthor} />
+            <ItsKevButton currentAuthorProp={currentAuthor} authorLabelProp={authorLabel}/>
+            <NotKevButton currentAuthorProp={currentAuthor}/>
         </div>
     );
 }

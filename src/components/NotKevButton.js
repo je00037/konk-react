@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const NotKevButton = () => {
+const NotKevButton = (currentAuthorProp) => {
     return (
         <div>
             <button className="Button Button-red">Not Kev!</button>
