@@ -1,7 +1,7 @@
 import '../css/App.css';
 import newQuote from '../utils/quoteGenerator';
 
-const StartButton = ({currentQuoteProp, setQuoteProp, setAuthorProp}) => {
+const StartButton = ({currentQuoteProp, setQuoteProp, setAuthorProp, buttonLabelProp}) => {
 
     const handleClick = (event) => {
         let quoteObject;
@@ -15,10 +15,10 @@ const StartButton = ({currentQuoteProp, setQuoteProp, setAuthorProp}) => {
         setQuoteProp(quoteText);
         setAuthorProp(quoteAuthor);
     }
-
+    
     return (
         <div>
-            <button className="Button Button-orange" onClick={handleClick}>Let's go!</button>
+            <button className="Button Button-orange" onClick={handleClick}>{buttonLabelProp}</button>
         </div>
     )
 }

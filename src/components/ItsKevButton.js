@@ -2,13 +2,14 @@ import '../css/App.css';
 
 const ItsKevButton = ({currentAuthorProp, authorLabelProp}) => {
     
-    const handleClick = () => { if (currentAuthorProp === "Kevin McCloud") 
-        { document.getElementById("its-kev-button").textContent = "CORRECT!"
-        } else {
-            document.getElementById("its-kev-button").textContent = "WRONG!";
-            authorLabelProp.textContent = `${currentAuthorProp}`
+    const handleClick = () =>  { 
+        if (currentAuthorProp === "Kevin McCloud") { 
+                document.getElementById("its-kev-button").textContent = "CORRECT!"
+    } else {
+    document.getElementById("its-kev-button").textContent = "WRONG!";
+    authorLabelProp.textContent = `${currentAuthorProp}`
 }
-    }
+}
 
     return (
         <div>
