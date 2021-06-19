@@ -11,8 +11,8 @@ const QuoteContainer = () => {
 
   let authorLabel = document.getElementById("author-label");
 
-  let buttonLabel = "";
-    if (currentAuthor === "") {buttonLabel = "Let's go"} else {buttonLabel = "Next"};
+  let startButtonLabel = "";
+    if (currentAuthor === "") {startButtonLabel = "Let's go"} else {startButtonLabel = "Next"};
 
   return (
         <div className="Quote-container">
@@ -25,7 +25,7 @@ const QuoteContainer = () => {
             setQuoteProp={setQuote} 
             currentAuthorProp={currentAuthor} 
             setAuthorProp={setAuthor} 
-            buttonLabelProp={buttonLabel} />
+            buttonLabelProp={startButtonLabel} />
             <ItsKevButton 
             currentAuthorProp={currentAuthor} 
             authorLabelProp={authorLabel}/>
