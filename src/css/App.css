@@ -6,7 +6,7 @@
 }
 
 .Gd-logo {
-  max-width: 10%;
+  max-width: 15%;
 }
 
 .App-content {
@@ -14,6 +14,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 30rem;
 }
 
 .Kev-container {
@@ -25,7 +26,7 @@
 }
 
 .Kev-image {
-  width: 50%;
+  width: 75%;
   animation: kevpulse 2.5s infinite;
   -webkit-animation: kevpulse 2.5s infinite;
 }
@@ -45,11 +46,59 @@
   text-align: center;
 }
 
+.Quote-text-container {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .Quote-text {
   margin-left: 2rem;
   margin-right: 2rem;
   font-family: "Source Serif Pro";
   font-weight: 200;
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.75rem;
+}
+
+.Button {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy";
+  color: white;
+  width: 30%;
+  border-radius: 50px;
+  padding: 0.75rem 3rem 0.25rem 3rem;
+  margin-bottom: 1rem;
+  border: none;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.Button:hover {
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 200ms;
+  transform: scale(1.1);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button-orange {
+  background-color: rgb(243, 106, 42);
+}
+
+.Button-orange:hover {
+  background-color: rgb(243, 189, 10);
+}
+
+.Button-green {
+  background-color: rgb(90, 231, 71);
+}
+
+.Button-red {
+  background-color: rgb(231, 71, 71);
 }
