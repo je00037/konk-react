@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const ItsKevButton = (props) => {
+const ItsKevButton = () => {
     return (
         <div>
             <button className="Button Button-green">It's Kev!</button>
