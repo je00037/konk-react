@@ -19,7 +19,7 @@ const QuoteContainer = () => {
             </div>
             <StartButton currentQuoteProp={currentQuote} setQuoteProp={setQuote} setAuthorProp={setAuthor} />
             <ItsKevButton currentAuthorProp={currentAuthor} authorLabelProp={authorLabel}/>
-            <NotKevButton currentAuthorProp={currentAuthor}/>
+            <NotKevButton currentAuthorProp={currentAuthor} authorLabelProp={authorLabel}/>
         </div>
     );
 }
