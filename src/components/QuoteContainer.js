@@ -25,7 +25,8 @@ const QuoteContainer = () => {
             setQuoteProp={setQuote} 
             currentAuthorProp={currentAuthor} 
             setAuthorProp={setAuthor} 
-            buttonLabelProp={startButtonLabel} />
+            buttonLabelProp={startButtonLabel}
+           />
             <ItsKevButton 
             currentAuthorProp={currentAuthor} 
             authorLabelProp={authorLabel}/>

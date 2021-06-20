@@ -14,6 +14,7 @@ const StartButton = ({currentQuoteProp, setQuoteProp, setAuthorProp, buttonLabel
         } while (currentQuoteProp === quoteText); 
         setQuoteProp(quoteText);
         setAuthorProp(quoteAuthor);
+        document.getElementById("author-label").textContent = "";
     }
     
     return (
