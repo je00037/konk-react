@@ -102,3 +102,11 @@
 .Button-red {
   background-color: rgb(231, 71, 71);
 }
+
+#author-label {
+  height: 1rem;
+  font-size: 1rem;
+  font-family: 'Source Serif Pro';
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
