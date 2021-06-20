@@ -1,19 +1,21 @@
 import '../css/App.css';
 
-const NotKevButton = ({currentAuthorProp, authorLabelProp}) => {
+const NotKevButton = ({currentAuthorProp, authorLabelProp, setGameStateProp, redButtonProp, setRedButtonProp}) => {
         
     const handleClick = () => { 
             if (currentAuthorProp === "Kevin McCloud") 
-                { document.getElementById("not-kev-button").textContent = "WRONG!";
+                { setRedButtonProp("WRONG!");
+                setGameStateProp("incorrect");
             } else {
-                document.getElementById("not-kev-button").textContent = "CORRECT!";
-                authorLabelProp.textContent = `${currentAuthorProp}`
+                setRedButtonProp("CORRECT!");
+                authorLabelProp.textContent = `${currentAuthorProp}`;
+                setGameStateProp("correct");
     }
         }
 
     return (
         <div>
-            <button id="not-kev-button" className="Button Button-red" onClick={handleClick}>Not Kev!</button>
+            <button id="not-kev-button" className="Button Button-red" onClick={handleClick}>{redButtonProp}</button>
         </div>
     )
 }
