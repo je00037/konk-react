@@ -74,7 +74,7 @@ const randomInteger = (min, max) =>
 const getQuote = (arr) => {
     let randomIndex = randomInteger(1, quotes.length - 1);
     let randomQuote = arr[randomIndex];
-    return randomQuote.quotation;
+    return randomQuote;
   }
 
 const newQuote = () => getQuote(quotes);
