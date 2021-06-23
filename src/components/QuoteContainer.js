@@ -12,7 +12,7 @@ const QuoteContainer = ({statusProp, quoteProp}) => {
   }
 
   return (
-        <div className="Quote-container">
+        <div>
             <div className="Quote-text-container">
                 <p className="Quote-text">{quoteText}</p>
                 <div id="author-label">{quoteAuthor}</div>

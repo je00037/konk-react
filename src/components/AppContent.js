@@ -19,7 +19,7 @@ const AppContent = () => {
     let newQuoteObject;
     do {
         newQuoteObject = newQuote();
-    } while (newQuoteObject.quotation === currentQuote.quotation);
+    } while (newQuoteObject.quotation === currentQuote);
 
     setQuote(newQuoteObject);
     setStatus("open");
@@ -29,10 +29,10 @@ const AppContent = () => {
 
   return (
     <div className='App-content'>
-      <div>
+      <div className='Kev-container'>
         <KevContainer />
       </div>
-      <div>
+      <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} />
         <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />

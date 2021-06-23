@@ -3,7 +3,7 @@ import '../css/App.css';
 
 const KevContainer = () => {
     return (
-        <div className="Kev-container">
+        <div>
             <img src={kev} className="Kev-image" alt="kevin-mccloud" />
         </div>
     );
