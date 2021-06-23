@@ -5,13 +5,16 @@ import QuoteContainer from './QuoteContainer.js';
 import StartButton from './StartButton.js';
 import ItsKevButton from './ItsKevButton.js';
 import NotKevButton from './NotKevButton.js';
+import Points from './Points.js';
 import newQuote from '../utils/quoteGenerator';
+
 
 
 const AppContent = () => {
 
   const [quote, setQuote] = useState({author: "Placeholder", quotation: "Hit the button to start."});
   const [status, setStatus] = useState("start");
+  const [points, setPoints] = useState(0);
 
   const handleStartClick = (event) => {
     let currentQuote = quote.quotation;
@@ -28,10 +31,15 @@ const AppContent = () => {
 }
 
   return (
-    <div className='App-content'>
-      <div className='Kev-container'>
-        <KevContainer />
+  
+    <div>
+      <div className="Points-row">
+        <Points currentPoints={points} />
       </div>
+      <div className='App-content'>
+        <div className='Kev-container'>
+          <KevContainer />
+        </div>
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} />
@@ -39,6 +47,7 @@ const AppContent = () => {
         <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
       </div>
     </div>
+  </div>
   );
 }
 

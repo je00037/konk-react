@@ -110,3 +110,22 @@
   font-weight: 600;
   margin-bottom: 2rem;
 }
+
+.Points-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#points-label {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy";
+  color: rgb(243, 189, 10);
+}
+
+#points-number {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy";
+  color: black;
+}
