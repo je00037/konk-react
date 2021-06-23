@@ -31,7 +31,7 @@ const AppContent = () => {
   return (
     <div className='App-content'>
       <KevContainer />
-      <QuoteContainer quoteProp={quote} />
+      <QuoteContainer statusProp={status} quoteProp={quote} />
       <StartButton statusProp={status} clickHandler={handleStartClick} />
       <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
       <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
