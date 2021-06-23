@@ -14,7 +14,6 @@ const AppContent = () => {
   const [status, setStatus] = useState("start");
 
   const handleStartClick = (event) => {
-    document.getElementById("author-label").textContent = "";
     let currentQuote = quote.quotation;
 
     let newQuoteObject;
@@ -30,11 +29,15 @@ const AppContent = () => {
 
   return (
     <div className='App-content'>
-      <KevContainer />
-      <QuoteContainer statusProp={status} quoteProp={quote} />
-      <StartButton statusProp={status} clickHandler={handleStartClick} />
-      <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
-      <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
+      <div>
+        <KevContainer />
+      </div>
+      <div>
+        <QuoteContainer statusProp={status} quoteProp={quote} />
+        <StartButton statusProp={status} clickHandler={handleStartClick} />
+        <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
+        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
+      </div>
     </div>
   );
 }
