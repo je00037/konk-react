@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const NotKevButton = ({statusProp, setStatusProp, authorProp}) => {
+const NotKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPointsProp}) => {
         
     let buttonText = "Not Kev";
 
@@ -15,6 +15,7 @@ const NotKevButton = ({statusProp, setStatusProp, authorProp}) => {
     const handleNotKevClick = () =>  { 
         if (authorProp !== "Kevin McCloud") { 
               setStatusProp("correct-notkev");
+              setPointsProp(pointsProp + 1);
         } else {
               setStatusProp("incorrect-notkev");}
     }

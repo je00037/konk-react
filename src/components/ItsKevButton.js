@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const ItsKevButton = ({statusProp, setStatusProp, authorProp}) => {
+const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPointsProp}) => {
     let buttonText = "It's Kev";
     if (statusProp === "correct-kev") {
         buttonText = "Correct!"
@@ -13,6 +13,7 @@ const ItsKevButton = ({statusProp, setStatusProp, authorProp}) => {
     const handleKevClick = () =>  { 
         if (authorProp === "Kevin McCloud") { 
               setStatusProp("correct-kev");
+              setPointsProp(pointsProp + 1);
         } else {
               setStatusProp("incorrect-kev");}
     }

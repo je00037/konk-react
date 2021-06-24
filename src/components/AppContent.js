@@ -43,8 +43,8 @@ const AppContent = () => {
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} />
-        <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
-        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} />
+        <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints} />
+        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints}/>
       </div>
     </div>
   </div>
