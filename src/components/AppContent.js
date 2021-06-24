@@ -6,6 +6,7 @@ import StartButton from './StartButton.js';
 import ItsKevButton from './ItsKevButton.js';
 import NotKevButton from './NotKevButton.js';
 import Points from './Points.js';
+import ResetButton from './ResetButton.js';
 import newQuote from '../utils/quoteGenerator';
 
 
@@ -35,6 +36,7 @@ const AppContent = () => {
     <div>
       <div className="Points-row">
         <Points currentPoints={points} />
+        <ResetButton />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
