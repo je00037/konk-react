@@ -13,9 +13,14 @@ import newQuote from '../utils/quoteGenerator';
 
 const AppContent = () => {
 
-  const [quote, setQuote] = useState({author: "Placeholder", quotation: "Hit the button to start."});
+  const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
+  const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
+
+/* would be nice to somehow have a conditional set the placeholder quote if the status is 'start'
+when it comes to the Reset button's functionality, so I don't have to pass the setQuote or placeholderQuote
+as a prop*/
 
   const handleStartClick = (event) => {
     let currentQuote = quote.quotation;
@@ -36,7 +41,7 @@ const AppContent = () => {
     <div>
       <div className="Points-row">
         <Points currentPoints={points} />
-        <ResetButton />
+        <ResetButton setPointsProp={setPoints} setStatusProp={setStatus} setQuoteProp={setQuote} placeholderQuoteProp={placeholderQuote} />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
