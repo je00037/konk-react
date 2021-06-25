@@ -1,9 +1,10 @@
 import '../css/App.css';
 
-const Points = ({currentPoints}) => {
+const Points = ({pointsProp}) => {
+
     return (
         <div>
-            <p id="points-label">Points: <span id="points-number">{currentPoints}</span></p>
+            <p id="points-label">Points: <span id="points-number">{pointsProp}</span></p>
         </div>
     )
 }

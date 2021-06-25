@@ -40,8 +40,8 @@ as a prop*/
   
     <div>
       <div className="Points-row">
-        <Points currentPoints={points} />
-        <ResetButton setPointsProp={setPoints} setStatusProp={setStatus} setQuoteProp={setQuote} placeholderQuoteProp={placeholderQuote} />
+        <Points pointsProp={points} />
+        <ResetButton setStatusProp={setStatus} setQuoteProp={setQuote} placeholderQuoteProp={placeholderQuote} setPointsProp={setPoints} />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
@@ -51,7 +51,7 @@ as a prop*/
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} />
         <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints} />
-        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints}/>
+        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints} />
       </div>
     </div>
   </div>
