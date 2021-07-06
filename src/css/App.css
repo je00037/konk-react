@@ -14,7 +14,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 30rem;
+  max-height: 30rem;
 }
 
 .Kev-container {
@@ -22,14 +22,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 25%;
+  width: 25%;
 }
 
 .Kev-image {
-  width: 75%;
+  max-width: 75%;
   animation: kevpulse 2.5s infinite;
   -webkit-animation: kevpulse 2.5s infinite;
 }
+
+/*
+@media screen and (min-width: 1100px) {
+  .Kev-image {
+    max-width: 45%;
+    animation: kevpulse 2.5s infinite;
+    -webkit-animation: kevpulse 2.5s infinite;
+  }
+}
+*/
 
 @keyframes kevpulse {
   0%, 100% {-webkit-transform: scale(1)}
