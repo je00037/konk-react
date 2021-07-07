@@ -9,6 +9,7 @@ const NotKevButton = ({statusProp, clickHandler}) => {
         case "open" :
         case "correct-kev" :
         case "incorrect-kev" :
+        case "end" :
             buttonText = "Not Kev";
             break;
         case "correct-notkev" :

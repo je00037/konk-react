@@ -10,6 +10,8 @@ import ResetButton from './ResetButton.js';
 import newQuote from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
+const endQuote = {author: "Placeholder", quotation: "That's all folks!"};
+let usedQuotes = [];
 
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
@@ -22,20 +24,34 @@ const AppContent = () => {
     setStatus("open");
   }
 
+  if (status === "end") {
+    document.getElementById("its-kev-button").setAttribute("style", "display: none;");
+    document.getElementById("not-kev-button").setAttribute("style", "display: none;");
+  }
+
   const handleStartClick = (event) => {
-    let currentQuote = quote.quotation;
-
-    let newQuoteObject;
-    do {
-        newQuoteObject = newQuote();
-    } while (newQuoteObject.quotation === currentQuote);
-
-    setQuote(newQuoteObject);
-    setStatus("open");
+    if (usedQuotes.length === 13) {
+      setQuote(endQuote); 
+      setStatus("end");
+      } else {
+          let newQuoteObject;
+          do {
+            newQuoteObject = newQuote();
+          } while (usedQuotes.includes(newQuoteObject.id));
+          usedQuotes.push(newQuoteObject.id);
+          console.log(usedQuotes);
+          setQuote(newQuoteObject);
+          setStatus("open");
+        }
   }
 
   const handleResetClick = () => {
+    if (status === "end") {
+      document.getElementById("its-kev-button").setAttribute("style", "display: inital;");
+      document.getElementById("not-kev-button").setAttribute("style", "display: initial;");
+    }
     setStatus("reset");
+    usedQuotes = [];
   }
 
   const handleKevClick = () =>  { 
@@ -71,7 +87,7 @@ const AppContent = () => {
         </div>
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
-        <StartButton statusProp={status} clickHandler={handleStartClick} />
+        <StartButton statusProp={status} clickHandler={handleStartClick} resetClickHandler={handleResetClick} />
         <ItsKevButton statusProp={status} clickHandler={handleKevClick} />
         <NotKevButton statusProp={status} clickHandler={handleNotKevClick} />
       </div>

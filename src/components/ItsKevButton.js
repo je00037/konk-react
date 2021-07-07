@@ -8,6 +8,7 @@ const ItsKevButton = ({statusProp, clickHandler}) => {
         case "open" :
         case "correct-notkev" :
         case "incorrect-notkev" :
+        case "end" :
             buttonText = "It's Kev";
             break;
         case "correct-kev" : 
