@@ -23,8 +23,10 @@ const NotKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPoi
 
     const handleNotKevClick = () =>  { 
         if (authorProp !== "Kevin McCloud") { 
-              setStatusProp("correct-notkev");
-                setPointsProp(pointsProp + 1);
+            setStatusProp("correct-notkev");
+            setPointsProp(pointsProp => {
+                return pointsProp + 1
+            });
         } else {
               setStatusProp("incorrect-notkev");}
     }

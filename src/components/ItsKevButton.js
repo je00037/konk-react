@@ -23,7 +23,9 @@ const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPoi
     const handleKevClick = () =>  { 
         if (authorProp === "Kevin McCloud") { 
               setStatusProp("correct-kev");
-              setPointsProp(pointsProp + 1);
+              setPointsProp(pointsProp => {
+                  return pointsProp + 1;
+              });
         } else {
               setStatusProp("incorrect-kev");}
     }
