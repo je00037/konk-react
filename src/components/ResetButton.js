@@ -1,18 +1,9 @@
 import '../css/App.css';
 
-const ResetButton = ({setPointsProp, setStatusProp, setQuoteProp, placeholderQuoteProp}) => {
-    
-    const handleClick = () => {
-        setPointsProp(0);
-        setStatusProp("start");
-        setQuoteProp(placeholderQuoteProp);
-    }
-    
+const ResetButton = ({clickHandler}) => {
     return (
-        <button className="Button Button-grey" onClick={handleClick}>Reset</button>
+        <button className="Button Button-grey" onClick={clickHandler}>Reset</button>
     )
 };
-
-
 
 export default ResetButton;

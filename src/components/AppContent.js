@@ -32,14 +32,20 @@ as a prop*/
     setStatus("open");
 
     /* not sure if this will actually work - reading state and setting new state in the same function? Do I need to call setQuote and setStatus with a function that simply returns those values instead?*/
-}
+  }
+
+  const handleResetClick = () => {
+    setPoints(0);
+    setStatus("start");
+    setQuote(placeholderQuote);
+  }
 
   return (
   
     <div>
       <div className="Points-row">
         <Points pointsProp={points} />
-        <ResetButton setStatusProp={setStatus} setQuoteProp={setQuote} placeholderQuoteProp={placeholderQuote} setPointsProp={setPoints} />
+        <ResetButton clickHandler={handleResetClick} />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
