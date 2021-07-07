@@ -3,7 +3,7 @@ import '../css/App.css';
 const StartButton = ({statusProp, clickHandler}) => {
 
     let buttonText = "Go!";
-        if (statusProp !== "start") {
+    if (statusProp !== "start") {
             buttonText = "Next";
         }
 

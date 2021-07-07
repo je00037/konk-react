@@ -1,13 +1,23 @@
 import '../css/App.css';
 
 const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPointsProp}) => {
-    let buttonText = "It's Kev";
-    if (statusProp === "correct-kev") {
-        buttonText = "Correct!"
-    }
+    let buttonText;
 
-    if (statusProp === "incorrect-kev") {
-        buttonText = "Wrong!"
+    switch(statusProp) {
+        case "start" :
+        case "open" :
+        case "correct-notkev" :
+        case "incorrect-notkev" :
+            buttonText = "It's Kev";
+            break;
+        case "correct-kev" : 
+            buttonText = "Correct!";
+            break;
+        case "incorrect-kev" :
+            buttonText = "Wrong!";
+            break;
+        default :
+            console.log("the game status is set to an unexpected value");
     }
 
     const handleKevClick = () =>  { 
@@ -17,6 +27,7 @@ const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPoi
         } else {
               setStatusProp("incorrect-kev");}
     }
+
     return (
         <div>
             <button id="its-kev-button" className="Button Button-green" onClick={handleKevClick}>{buttonText}</button>

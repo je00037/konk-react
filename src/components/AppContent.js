@@ -9,11 +9,9 @@ import Points from './Points.js';
 import ResetButton from './ResetButton.js';
 import newQuote from '../utils/quoteGenerator';
 
-
+const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
 
 const AppContent = () => {
-
-  const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
