@@ -16,9 +16,11 @@ const AppContent = () => {
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
 
-/* would be nice to somehow have a conditional set the placeholder quote if the status is 'start'
-when it comes to the Reset button's functionality, so I don't have to pass the setQuote or placeholderQuote
-as a prop*/
+  if (status === "reset") {
+    setQuote(placeholderQuote);
+    setPoints(0);
+    setStatus("open");
+  }
 
   const handleStartClick = (event) => {
     let currentQuote = quote.quotation;
@@ -30,14 +32,10 @@ as a prop*/
 
     setQuote(newQuoteObject);
     setStatus("open");
-
-    /* not sure if this will actually work - reading state and setting new state in the same function? Do I need to call setQuote and setStatus with a function that simply returns those values instead?*/
   }
 
   const handleResetClick = () => {
-    setPoints(0);
-    setStatus("start");
-    setQuote(placeholderQuote);
+    setStatus("reset");
   }
 
   const handleKevClick = () =>  { 
@@ -62,7 +60,6 @@ as a prop*/
   }
 
   return (
-  
     <div>
       <div className="Points-row">
         <Points pointsProp={points} />
