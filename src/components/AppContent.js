@@ -40,6 +40,27 @@ as a prop*/
     setQuote(placeholderQuote);
   }
 
+  const handleKevClick = () =>  { 
+    if (quote.author === "Kevin McCloud") { 
+          setStatus("correct-kev");
+          setPoints(points => {
+              return points + 1;
+          });
+    } else {
+          setStatus("incorrect-kev");
+        }
+  }
+
+  const handleNotKevClick = () =>  { 
+    if (quote.author !== "Kevin McCloud") { 
+        setStatus("correct-notkev");
+        setPoints(points => {
+            return points + 1
+        });
+    } else {
+          setStatus("incorrect-notkev");}
+  }
+
   return (
   
     <div>
@@ -54,8 +75,8 @@ as a prop*/
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} />
-        <ItsKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints} />
-        <NotKevButton statusProp={status} setStatusProp={setStatus} authorProp={quote.author} pointsProp={points} setPointsProp={setPoints} />
+        <ItsKevButton statusProp={status} clickHandler={handleKevClick} />
+        <NotKevButton statusProp={status} clickHandler={handleNotKevClick} />
       </div>
     </div>
   </div>

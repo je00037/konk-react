@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPointsProp}) => {
+const ItsKevButton = ({statusProp, clickHandler}) => {
     let buttonText;
 
     switch(statusProp) {
@@ -20,19 +20,9 @@ const ItsKevButton = ({statusProp, setStatusProp, authorProp, pointsProp, setPoi
             console.log("the game status is set to an unexpected value");
     }
 
-    const handleKevClick = () =>  { 
-        if (authorProp === "Kevin McCloud") { 
-              setStatusProp("correct-kev");
-              setPointsProp(pointsProp => {
-                  return pointsProp + 1;
-              });
-        } else {
-              setStatusProp("incorrect-kev");}
-    }
-
     return (
         <div>
-            <button id="its-kev-button" className="Button Button-green" onClick={handleKevClick}>{buttonText}</button>
+            <button id="its-kev-button" className="Button Button-green" onClick={clickHandler}>{buttonText}</button>
         </div>
     )
 }
