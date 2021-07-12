@@ -1,4 +1,4 @@
-const quotes = [
+export const quotes = [
     { author: "placeholder", quotation: "placeholder quotation", id: 0 },
     {
       author: "Kevin McCloud",
@@ -90,8 +90,4 @@ const getQuote = (arr) => {
     return randomQuote;
   }
 
-const newQuote = () => getQuote(quotes);
-
-
-
-export default newQuote;
+export const newQuote = () => getQuote(quotes);

@@ -7,7 +7,7 @@ import ItsKevButton from './ItsKevButton.js';
 import NotKevButton from './NotKevButton.js';
 import Points from './Points.js';
 import ResetButton from './ResetButton.js';
-import newQuote from '../utils/quoteGenerator';
+import { newQuote, quotes } from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
 const endQuote = {author: "Placeholder", quotation: "That's all folks!"};
@@ -30,7 +30,7 @@ const AppContent = () => {
   }
 
   const handleStartClick = (event) => {
-    if (usedQuotes.length === 13) {
+    if (usedQuotes.length === quotes.length - 1) {
       setQuote(endQuote); 
       setStatus("end");
       } else {
@@ -39,7 +39,6 @@ const AppContent = () => {
             newQuoteObject = newQuote();
           } while (usedQuotes.includes(newQuoteObject.id));
           usedQuotes.push(newQuoteObject.id);
-          console.log(usedQuotes);
           setQuote(newQuoteObject);
           setStatus("open");
         }
