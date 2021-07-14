@@ -40,9 +40,8 @@ const AppContent = () => {
         }
   }
 
-  const handleResetClick = () => {
-    setStatus("reset");
-  }
+  const handleResetClick = () => setStatus("reset");
+
 
   const handleGuessClick = (buttonPressed) =>  { 
     
@@ -56,7 +55,7 @@ const AppContent = () => {
         setStatus("incorrect-kev");
       }
     } 
-    
+
     if (buttonPressed === "not-kev") {
       if (quote.author !== "Kevin McCloud") { 
         setStatus("correct-notkev");
