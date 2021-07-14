@@ -19,17 +19,13 @@ const AppContent = () => {
   const [points, setPoints] = useState(0);
 
   if (status === "reset") {
+    usedQuotes = [];
     setQuote(placeholderQuote);
     setPoints(0);
     setStatus("open");
   }
 
-  if (status === "end") {
-    document.getElementById("its-kev-button").setAttribute("style", "display: none;");
-    document.getElementById("not-kev-button").setAttribute("style", "display: none;");
-  }
-
-  const handleStartClick = (event) => {
+  const handleStartClick = () => {
     if (usedQuotes.length === quotes.length - 1) {
       setQuote(endQuote); 
       setStatus("end");
@@ -45,12 +41,7 @@ const AppContent = () => {
   }
 
   const handleResetClick = () => {
-    if (status === "end") {
-      document.getElementById("its-kev-button").setAttribute("style", "display: inital;");
-      document.getElementById("not-kev-button").setAttribute("style", "display: initial;");
-    }
     setStatus("reset");
-    usedQuotes = [];
   }
 
   const handleKevClick = () =>  { 

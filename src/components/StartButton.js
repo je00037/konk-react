@@ -27,30 +27,5 @@ const StartButton = ({statusProp, clickHandler, resetClickHandler}) => {
     }
 }
 
-/*
-    let buttonText = "Go!";
-
-    if (statusProp === "end") {
-        buttonText = "Play Again?"
-        return (
-            <div>
-                <button id="start-button" className="Button Button-orange" onClick={resetClickHandler}>{buttonText}</button>
-            </div>
-        )
-    } else if (statusProp !== "start") {
-        buttonText = "Next";
-        return (
-            <div>
-                <button id="start-button" className="Button Button-orange" onClick={clickHandler}>{buttonText}</button>
-            </div>
-        )
-    } else return (
-            <div>
-                <button id="start-button" className="Button Button-orange" onClick={clickHandler}>{buttonText}</button>
-            </div>
-        )
-}
-*/
-
 export default StartButton;
 

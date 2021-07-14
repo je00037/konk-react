@@ -8,7 +8,6 @@ const ItsKevButton = ({statusProp, clickHandler}) => {
         case "open" :
         case "correct-notkev" :
         case "incorrect-notkev" :
-        case "end" :
             buttonText = "It's Kev";
             break;
         case "correct-kev" : 
@@ -17,6 +16,8 @@ const ItsKevButton = ({statusProp, clickHandler}) => {
         case "incorrect-kev" :
             buttonText = "Wrong!";
             break;
+        case "end" :
+            return null;
         default :
             console.log("the game status is set to an unexpected value");
     }
