@@ -44,25 +44,28 @@ const AppContent = () => {
     setStatus("reset");
   }
 
-  const handleKevClick = () =>  { 
-    if (quote.author === "Kevin McCloud") { 
-          setStatus("correct-kev");
-          setPoints(points => {
-              return points + 1;
-          });
-    } else {
-          setStatus("incorrect-kev");
-        }
-  }
-
-  const handleNotKevClick = () =>  { 
-    if (quote.author !== "Kevin McCloud") { 
+  const handleGuessClick = (buttonPressed) =>  { 
+    
+    if (buttonPressed === "kev") {
+      if (quote.author === "Kevin McCloud") { 
+        setStatus("correct-kev");
+        setPoints(points => {
+            return points + 1;
+        });
+  } else {
+        setStatus("incorrect-kev");
+      }
+    } 
+    
+    if (buttonPressed === "not-kev") {
+      if (quote.author !== "Kevin McCloud") { 
         setStatus("correct-notkev");
         setPoints(points => {
             return points + 1
         });
     } else {
           setStatus("incorrect-notkev");}
+    }  
   }
 
   return (
@@ -78,8 +81,8 @@ const AppContent = () => {
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} />
         <StartButton statusProp={status} clickHandler={handleStartClick} resetClickHandler={handleResetClick} />
-        <ItsKevButton statusProp={status} clickHandler={handleKevClick} />
-        <NotKevButton statusProp={status} clickHandler={handleNotKevClick} />
+        <ItsKevButton statusProp={status} clickHandler={handleGuessClick} />
+        <NotKevButton statusProp={status} clickHandler={handleGuessClick} />
       </div>
     </div>
   </div>

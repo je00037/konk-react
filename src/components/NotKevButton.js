@@ -25,7 +25,7 @@ const NotKevButton = ({statusProp, clickHandler}) => {
 
     return (
         <div>
-            <button id="not-kev-button" className="Button Button-red" onClick={clickHandler}>{buttonText}</button>
+            <button id="not-kev-button" className="Button Button-red" onClick={() => clickHandler("not-kev")}>{buttonText}</button>
         </div>
     )
 }

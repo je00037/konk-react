@@ -24,7 +24,7 @@ const ItsKevButton = ({statusProp, clickHandler}) => {
 
     return (
         <div>
-            <button id="its-kev-button" className="Button Button-green" onClick={clickHandler}>{buttonText}</button>
+            <button id="its-kev-button" className="Button Button-green" onClick={() => clickHandler("kev")}>{buttonText}</button>
         </div>
     )
 }
