@@ -1,140 +1,281 @@
-.Gd-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media only screen and (max-width: 1024px) {
+  .Gd-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Gd-logo {
+    width: 15%;
+    max-width: 150px;
+  }
+  
+  .App-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 30rem;
+  }
+  
+  .Kev-container {
+    display: none;
+  }
+  
+  .Kev-image {
+    display: none;
+  }
+  
+  .Quote-container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .Quote-text-container {
+    height: 20rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/transparent-kev.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+  .Quote-text {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-family: "Source Serif Pro";
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+  
+  .Button {
+    font-size: 1rem;
+    font-family: "Luckiest Guy";
+    color: white;
+    width: 40%;
+    border-radius: 50px;
+    padding: 0.75rem 2rem 0.25rem 2rem;
+    margin-bottom: 1rem;
+    border: none;
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .Button:hover {
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 200ms;
+    transform: scale(1.1);
+  }
+  
+  .Button:focus {
+    outline: none;
+  }
+  
+  .Button-orange {
+    background-color: rgb(243, 106, 42);
+  }
+  
+  .Button-orange:hover {
+    background-color: rgb(243, 189, 10);
+  }
+  
+  .Button-green {
+    background-color: rgb(90, 231, 71);
+  }
+  
+  .Button-red {
+    background-color: rgb(231, 71, 71);
+  }
+  
+  .Button-grey {
+    background-color: grey;
+    width: 20%;
+    padding: 0.6rem 0.25rem 0.4rem 0.25rem;
+    margin-bottom: 0.5rem;
+
+  }
+  
+  #author-label {
+    height: 1rem;
+    font-size: 1rem;
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .Points-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #points-label {
+    font-size: 1.5rem;
+    font-family: "Luckiest Guy";
+    color: rgb(243, 189, 10);
+  }
+  
+  #points-number {
+    font-size: 1.5rem;
+    font-family: "Luckiest Guy";
+    color: black;
+  }
 }
 
-.Gd-logo {
-  max-width: 15%;
+@media only screen and (min-width: 1025px) {
+  .Gd-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Gd-logo {
+    width: 15%;
+    max-width: 150px;
+  }
+  
+  .App-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 30rem;
+  }
+  
+  .Kev-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+  }
+  
+  .Kev-image {
+    width: 100%;
+    max-width: 200px;
+    animation: kevpulse 2.5s infinite;
+    -webkit-animation: kevpulse 2.5s infinite;
+  }
+  
+  @keyframes kevpulse {
+    0%, 100% {-webkit-transform: scale(1)}
+    50% {-webkit-transform: scale(0.9)}
+  }
+  
+  @-webkit-keyframes kevpulse {
+    0%, 100% {-webkit-transform: scale(1)}
+    50% {-webkit-transform: scale(0.9)}
+  }
+  
+  .Quote-container {
+    width: 75%;
+    text-align: center;
+  }
+  
+  .Quote-text-container {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Quote-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-family: "Source Serif Pro";
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.75rem;
+  }
+  
+  .Button {
+    font-size: 1.5rem;
+    font-family: "Luckiest Guy";
+    color: white;
+    width: 30%;
+    border-radius: 50px;
+    padding: 0.75rem 3rem 0.25rem 3rem;
+    margin-bottom: 1rem;
+    border: none;
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .Button:hover {
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 200ms;
+    transform: scale(1.1);
+  }
+  
+  .Button:focus {
+    outline: none;
+  }
+  
+  .Button-orange {
+    background-color: rgb(243, 106, 42);
+  }
+  
+  .Button-orange:hover {
+    background-color: rgb(243, 189, 10);
+  }
+  
+  .Button-green {
+    background-color: rgb(90, 231, 71);
+  }
+  
+  .Button-red {
+    background-color: rgb(231, 71, 71);
+  }
+  
+  .Button-grey {
+    background-color: grey;
+    width: 20%;
+  }
+  
+  #author-label {
+    height: 1rem;
+    font-size: 1rem;
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .Points-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #points-label {
+    font-size: 1.5rem;
+    font-family: "Luckiest Guy";
+    color: rgb(243, 189, 10);
+  }
+  
+  #points-number {
+    font-size: 1.5rem;
+    font-family: "Luckiest Guy";
+    color: black;
+  }
 }
 
-.App-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  max-height: 30rem;
-}
-
-.Kev-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 25%;
-}
-
-.Kev-image {
-  width: 100%;
-  max-width: 200px;
-  animation: kevpulse 2.5s infinite;
-  -webkit-animation: kevpulse 2.5s infinite;
-}
-
-@keyframes kevpulse {
-  0%, 100% {-webkit-transform: scale(1)}
-  50% {-webkit-transform: scale(0.9)}
-}
-
-@-webkit-keyframes kevpulse {
-  0%, 100% {-webkit-transform: scale(1)}
-  50% {-webkit-transform: scale(0.9)}
-}
-
-.Quote-container {
-  width: 75%;
-  text-align: center;
-}
-
-.Quote-text-container {
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Quote-text {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  font-family: "Source Serif Pro";
-  font-weight: 200;
-  font-style: italic;
-  font-size: 1.75rem;
-}
-
-.Button {
-  font-size: 1.5rem;
-  font-family: "Luckiest Guy";
-  color: white;
-  width: 30%;
-  border-radius: 50px;
-  padding: 0.75rem 3rem 0.25rem 3rem;
-  margin-bottom: 1rem;
-  border: none;
-  transition-property: all;
-  transition-duration: 300ms;
-}
-
-.Button:hover {
-  cursor: pointer;
-  transition-property: all;
-  transition-duration: 200ms;
-  transform: scale(1.1);
-}
-
-.Button:focus {
-  outline: none;
-}
-
-.Button-orange {
-  background-color: rgb(243, 106, 42);
-}
-
-.Button-orange:hover {
-  background-color: rgb(243, 189, 10);
-}
-
-.Button-green {
-  background-color: rgb(90, 231, 71);
-}
-
-.Button-red {
-  background-color: rgb(231, 71, 71);
-}
-
-.Button-grey {
-  background-color: grey;
-  width: 20%;
-}
-
-#author-label {
-  height: 1rem;
-  font-size: 1rem;
-  font-family: 'Source Serif Pro';
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.Points-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  margin-bottom: 1rem;
-}
-
-#points-label {
-  font-size: 1.5rem;
-  font-family: "Luckiest Guy";
-  color: rgb(243, 189, 10);
-}
-
-#points-number {
-  font-size: 1.5rem;
-  font-family: "Luckiest Guy";
-  color: black;
-}
