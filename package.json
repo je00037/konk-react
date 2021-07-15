@@ -15,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-kev": "npm run build && aws s3 sync /Users/joeellis/konk-react/build s3://konk-react && echo '🚀 Deployed to S3!'"
   },
   "eslintConfig": {
     "extends": [
