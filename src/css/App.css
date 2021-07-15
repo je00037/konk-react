@@ -51,7 +51,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     font-family: "Source Serif Pro";
-    font-weight: 200;
+    font-weight: 400;
     font-style: italic;
     font-size: 1.25rem;
   }
@@ -65,27 +65,18 @@
     padding: 0.75rem 2rem 0.25rem 2rem;
     margin-bottom: 1rem;
     border: none;
-    transition-property: all;
-    transition-duration: 300ms;
-  }
-  
-  .Button:hover {
-    cursor: pointer;
-    transition-property: all;
-    transition-duration: 200ms;
-    transform: scale(1.1);
   }
   
   .Button:focus {
     outline: none;
   }
+
+  .Button:active {
+    transform: scale(0.98);
+  }
   
   .Button-orange {
     background-color: rgb(243, 106, 42);
-  }
-  
-  .Button-orange:hover {
-    background-color: rgb(243, 189, 10);
   }
   
   .Button-green {
@@ -227,6 +218,10 @@
     outline: none;
   }
   
+  .Button:active {
+    transform: scale(0.98);
+  }
+
   .Button-orange {
     background-color: rgb(243, 106, 42);
   }
