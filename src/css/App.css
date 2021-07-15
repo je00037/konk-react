@@ -14,7 +14,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 30rem;
+  max-height: 30rem;
 }
 
 .Kev-container {
@@ -22,11 +22,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 25%;
+  width: 25%;
 }
 
 .Kev-image {
-  width: 75%;
+  width: 100%;
+  max-width: 200px;
   animation: kevpulse 2.5s infinite;
   -webkit-animation: kevpulse 2.5s infinite;
 }
@@ -103,10 +104,37 @@
   background-color: rgb(231, 71, 71);
 }
 
+.Button-grey {
+  background-color: grey;
+  width: 20%;
+}
+
 #author-label {
   height: 1rem;
   font-size: 1rem;
   font-family: 'Source Serif Pro';
   font-weight: 600;
   margin-bottom: 2rem;
+}
+
+.Points-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom: 1rem;
+}
+
+#points-label {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy";
+  color: rgb(243, 189, 10);
+}
+
+#points-number {
+  font-size: 1.5rem;
+  font-family: "Luckiest Guy";
+  color: black;
 }
