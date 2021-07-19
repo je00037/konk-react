@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/App.css';
 
 const QuoteContainer = ({statusProp, quoteProp}) => {
-
   let quoteText = quoteProp.quotation;
   let quoteAuthor;
 
