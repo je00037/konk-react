@@ -18,9 +18,7 @@ const StartButton = ({statusProp, clickHandler, resetClickHandler}) => {
     }
 
     return (
-        <div>
             <button id="start-button" className="Button Button-orange" onClick={handleClick}>{buttonText}</button>
-        </div>
     );
 }
 

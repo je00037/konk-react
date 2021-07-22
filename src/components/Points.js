@@ -1,10 +1,10 @@
 import '../css/App.css';
 
-const Points = ({pointsProp}) => {
+const Points = ({pointsProp, questionsAskedProp}) => {
 
     return (
         <div>
-            <p id="points-label">Points: <span id="points-number">{pointsProp}</span></p>
+            <p id="points-label">Points: <span id="points-number">{pointsProp} / {questionsAskedProp}</span></p>
         </div>
     )
 }

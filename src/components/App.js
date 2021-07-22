@@ -4,11 +4,10 @@ import GrandDesignsHeader from './GrandDesignsHeader.js';
 
 const App = () => {
   return (
-    <div>
+    <>
       <GrandDesignsHeader />
       <AppContent />
-
-    </div>
+    </>
   );
 }
 

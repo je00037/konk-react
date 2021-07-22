@@ -10,8 +10,8 @@ import ResetButton from './ResetButton.js';
 import { newQuote, quotes } from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
-const endQuote = {author: "Placeholder", quotation: "That's all folks!"};
 let usedQuotes = [];
+let questionsAsked = 0;
 
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
@@ -27,7 +27,6 @@ const AppContent = () => {
 
   const handleStartClick = () => {
     if (usedQuotes.length === quotes.length - 1) {
-      setQuote(endQuote); 
       setStatus("end");
       } else {
           let newQuoteObject;
@@ -36,12 +35,15 @@ const AppContent = () => {
           } while (usedQuotes.includes(newQuoteObject.id));
           usedQuotes.push(newQuoteObject.id);
           setQuote(newQuoteObject);
+          questionsAsked += 1;
           setStatus("open");
         }
   }
 
-  const handleResetClick = () => setStatus("reset");
-
+  const handleResetClick = () => {
+    questionsAsked = 0;
+    setStatus("reset");
+  }
 
   const handleGuessClick = (buttonPressed) =>  { 
     
@@ -68,9 +70,9 @@ const AppContent = () => {
   }
 
   return (
-    <div>
+    <>
       <div className="Points-row">
-        <Points pointsProp={points} />
+        <Points pointsProp={points} questionsAskedProp={questionsAsked} />
         <ResetButton clickHandler={handleResetClick} />
       </div>
       <div className='App-content'>
@@ -78,13 +80,13 @@ const AppContent = () => {
           <KevContainer />
         </div>
       <div className="Quote-container">
-        <QuoteContainer statusProp={status} quoteProp={quote} />
+        <QuoteContainer statusProp={status} quoteProp={quote} pointsProp={points} />
         <StartButton statusProp={status} clickHandler={handleStartClick} resetClickHandler={handleResetClick} />
         <ItsKevButton statusProp={status} clickHandler={handleGuessClick} />
         <NotKevButton statusProp={status} clickHandler={handleGuessClick} />
       </div>
     </div>
-  </div>
+  </>
   );
 }
 
