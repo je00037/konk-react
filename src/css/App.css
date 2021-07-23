@@ -70,6 +70,14 @@
   background-color: rgb(231, 71, 71);
 }
 
+.Button-grey {
+  background-color: grey;
+}
+
+.Button-blue {
+  background-color: aquamarine;
+}
+
 #author-label {
   height: 1rem;
   font-size: 1rem;
@@ -132,7 +140,12 @@
   }
  
   .Button-grey {
-    background-color: grey;
+    padding: 0.6rem 0.25rem 0.4rem 0.25rem;
+    margin-bottom: 0.5rem;
+    width: 20%;
+  }
+
+  .Button-blue {
     width: 20%;
     padding: 0.6rem 0.25rem 0.4rem 0.25rem;
     margin-bottom: 0.5rem;
@@ -199,7 +212,10 @@
   }
 
   .Button-grey {
-    background-color: grey;
+    width: 20%;
+  }
+
+  .Button-blue {
     width: 20%;
   }
 
