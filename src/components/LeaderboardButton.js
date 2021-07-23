@@ -1,8 +1,8 @@
 import '../css/App.css';
 
-const LeaderboardButton = () => {
+const LeaderboardButton = ({showHide}) => {
     return (
-        <button className="Button Button-blue">Scores</button>
+        <button className="Button Button-blue" onClick={showHide}>Scores</button>
     )
 }
 

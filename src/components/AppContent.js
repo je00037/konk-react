@@ -8,6 +8,7 @@ import NotKevButton from './NotKevButton.js';
 import Points from './Points.js';
 import ResetButton from './ResetButton.js';
 import LeaderboardButton from './LeaderboardButton.js';
+import LeaderboardModal from './LeaderboardModal.js';
 import { newQuote, quotes } from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
@@ -18,6 +19,7 @@ const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
+  const [scoresModalShow, setScoresModalShow] = useState(false);
 
   if (status === "reset") {
     usedQuotes = [];
@@ -70,12 +72,17 @@ const AppContent = () => {
     }  
   }
 
+  const handleScoresModal = () => {
+    setScoresModalShow(!scoresModalShow);
+  }
+
   return (
     <>
+      {scoresModalShow ? <LeaderboardModal handleClose={handleScoresModal} /> : null}
       <div className="Points-row">
         <Points pointsProp={points} questionsAskedProp={questionsAsked} />
         <ResetButton clickHandler={handleResetClick} />
-        <LeaderboardButton />
+        <LeaderboardButton showHide={handleScoresModal} />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
