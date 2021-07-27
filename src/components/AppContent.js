@@ -78,7 +78,7 @@ const AppContent = () => {
 
   return (
     <>
-      {scoresModalShow ? <LeaderboardModal handleClose={handleScoresModal} points={points} status={status} /> : null}
+      {scoresModalShow ? <LeaderboardModal setDisplay={handleScoresModal} /> : null}
       <div className="Points-row">
         <Points pointsProp={points} questionsAskedProp={questionsAsked} />
         <ResetButton clickHandler={handleResetClick} />

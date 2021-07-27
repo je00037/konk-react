@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/konk-backend/node_modules
 /.pnp
 .pnp.js
 
