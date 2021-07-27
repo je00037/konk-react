@@ -14,7 +14,6 @@ app.get('/leaderboard', async (req, res) => {
         const leaderboardData = await db.collection('leaderboard').find({}).toArray();
         res.set('Access-Control-Allow-Origin', '*');
         res.status(200).json(leaderboardData);
-        console.log(leaderboardData);
         client.close();
     } catch (error) {
         res.status(500).json({ message: "error!", error });
