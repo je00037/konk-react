@@ -1,5 +1,5 @@
 import '../css/App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import KevContainer from './KevContainer.js';
 import QuoteContainer from './QuoteContainer.js';
 import StartButton from './StartButton.js';
@@ -14,21 +14,21 @@ import { newQuote, quotes } from '../utils/quoteGenerator';
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
 let usedQuotes = [];
 let questionsAsked = 0;
-
 let leaderboardData;
-
-const fetchData = async () => {
-  const result = await fetch('http://localhost:8000/leaderboard');
-  leaderboardData = await result.json();
-};
-
-fetchData();
 
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
   const [scoresModalShow, setScoresModalShow] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch('http://localhost:8000/leaderboard');
+      leaderboardData = await result.json();
+    };
+    fetchData();
+  }, []);
 
   if (status === "reset") {
     usedQuotes = [];

@@ -1,6 +1,6 @@
 import '../css/App.css';
 
-const LeaderboardModal = ({setDisplay, leadersData, apiData}) => {
+const LeaderboardModal = ({setDisplay, apiData}) => {
    
 /*
     TRY HOLDING THE LEADERBOARD DATA IN APPCONTENT AND PASS TO MODAL AS A PROP, THEN HAVE AN UPDATER FUNCTION
