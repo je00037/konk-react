@@ -15,6 +15,15 @@ const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to s
 let usedQuotes = [];
 let questionsAsked = 0;
 
+let leaderboardData;
+
+const fetchData = async () => {
+  const result = await fetch('http://localhost:8000/leaderboard');
+  leaderboardData = await result.json();
+};
+
+fetchData();
+
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
@@ -78,7 +87,7 @@ const AppContent = () => {
 
   return (
     <>
-      {scoresModalShow ? <LeaderboardModal setDisplay={handleScoresModal} /> : null}
+      {scoresModalShow ? <LeaderboardModal setDisplay={handleScoresModal} apiData={leaderboardData} /> : null}
       <div className="Points-row">
         <Points pointsProp={points} questionsAskedProp={questionsAsked} />
         <ResetButton clickHandler={handleResetClick} />
