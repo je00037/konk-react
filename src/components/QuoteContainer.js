@@ -14,8 +14,8 @@ const QuoteContainer = ({statusProp, quoteProp, pointsProp}) => {
   }
 
   return (
-    <div className="Quote-text-container">
-      {statusProp === "end" ? <p className="Quote-text">Game over! You scored <strong>{pointsProp}</strong> points.<br/><br/> {pointsProp <= 4 ? poorEffortMessage : pointsProp <= 10 ? notBadMessage : greatMessage}</p> : <p className="Quote-text">{quoteText}</p>}
+    <div className="Quote-text-container">{statusProp === "end" ? 
+        <p className="Quote-text">Game over! You scored <strong>{pointsProp}</strong> points.<br/><br/> {pointsProp <= 4 ? poorEffortMessage : pointsProp <= 10 ? notBadMessage : greatMessage}</p> : <p className="Quote-text">{quoteText}</p>}
       <div id="author-label">{quoteAuthor}</div>
     </div>
   );

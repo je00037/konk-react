@@ -20,4 +20,23 @@ app.get('/leaderboard', async (req, res) => {
     }
 });
 
+app.post('/leaderboard', async (req, res) => {    
+    try {
+        const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true });
+        const db = client.db('konk-data');
+        const { user, points } = req.body;
+
+        await db.collection('leaderboard').insertOne(
+            {
+                "user": user,
+                "points": points,
+            }
+        );
+        res.status(200).json({ message: "success!" });
+        client.close();
+    } catch (error) {
+        res.status(500).json({ message: "error!", error})
+    }
+});
+
 app.listen(8000, () => console.log("listening on port 8000"));

@@ -9,6 +9,7 @@ import Points from './Points.js';
 import ResetButton from './ResetButton.js';
 import LeaderboardButton from './LeaderboardButton.js';
 import LeaderboardModal from './LeaderboardModal.js';
+import SubmitScore from './SubmitScore.js';
 import { newQuote, quotes } from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
@@ -24,7 +25,7 @@ const AppContent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch('http://localhost:8000/leaderboard');
+      const result = await fetch('/leaderboard');
       leaderboardData = await result.json();
     };
     fetchData();
@@ -99,6 +100,7 @@ const AppContent = () => {
         </div>
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} pointsProp={points} />
+        {status === "end" ? <SubmitScore points={points} /> : null}
         <StartButton statusProp={status} clickHandler={handleStartClick} resetClickHandler={handleResetClick} />
         <ItsKevButton statusProp={status} clickHandler={handleGuessClick} />
         <NotKevButton statusProp={status} clickHandler={handleGuessClick} />

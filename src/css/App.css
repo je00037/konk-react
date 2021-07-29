@@ -40,6 +40,30 @@
   font-family: "Source Serif Pro";
   font-style: italic;
 }
+#name {
+  border-radius: 50px;
+  height: 2rem;
+  border: lightgrey;
+  width: 30%;
+  text-align: center;
+  font-family: "Luckiest Guy";
+  font-size: 1.25rem;
+}
+
+#name:focus {
+  box-shadow: 0 0 0 2pt rgb(20, 52, 164);
+  border-radius: 50px;
+  outline: none;
+  transition: 0.1s;
+}
+
+#name-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
 .Button {
   display: block;
