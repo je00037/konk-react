@@ -148,7 +148,7 @@
   position: fixed;
   background: white;
   border-radius: 2px;
-  width: 80%;
+  width: 60%;
   height: auto;
   top:50%;
   left:50%;
@@ -163,6 +163,22 @@
 .display-none {
   display: none;
 }
+
+.leaders-list {
+  font-family: "Luckiest Guy";
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.modal-heading {
+  font-family: "Source Serif Pro";
+  font-style: italic;
+}
+
+.modal-list-item {
+  margin-bottom: 0.5rem;
+}
+
 
 @media only screen and (max-width: 1024px) {
   .Kev-container {
@@ -269,12 +285,9 @@
     background-color: rgb(243, 189, 10);
   }
 
-  .Button-grey {
-    width: 20%;
-  }
-
-  .Button-blue {
-    width: 20%;
+  .Button-grey, .Button-blue {
+    width: 30%;
+    max-width: 300px;
   }
 
   .Points-row {

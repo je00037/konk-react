@@ -11,9 +11,9 @@ const LeaderboardModal = ({setDisplay, apiData}) => {
     return (
         <div className="modal display-block">
             <section className="modal-main">
-                <h3>Here are the current high scores:</h3>
-                <ul>
-                    {apiData.map(item => <li key={item._id}>{item.user}, {item.points}</li>)}
+                <p className="modal-heading">Here are the current high scores:</p>
+                <ul className="leaders-list">
+                    {apiData.map(item => <li className="modal-list-item" key={item._id}>{item.user}, {item.points}</li>)}
                 </ul>
                 <button type="button" className="Button Button-grey" onClick={setDisplay}>Close</button>
             </section>
