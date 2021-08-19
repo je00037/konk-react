@@ -12,9 +12,9 @@ const LeaderboardModal = ({setDisplay, apiData}) => {
         <div className="modal display-block">
             <section className="modal-main">
                 <p className="modal-heading">Here are the current high scores:</p>
-                <ul className="leaders-list">
-                    {apiData.map(item => <li className="modal-list-item" key={item._id}>{item.user}, {item.points}</li>)}
-                </ul>
+                <ol className="leaders-list">
+                    {apiData.map((item, index) => index === 0 ? <li className="modal-list-item-leader" key={item._id}>{item.user}, {item.points}</li> : <li className="modal-list-item" key={item._id}>{item.user}, {item.points}</li>)}
+                </ol>
                 <button type="button" className="Button Button-grey" onClick={setDisplay}>Close</button>
             </section>
         </div>

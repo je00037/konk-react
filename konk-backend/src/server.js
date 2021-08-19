@@ -11,7 +11,7 @@ app.get('/leaderboard', async (req, res) => {
         const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true });
         const db = client.db('konk-data');
 
-        const leaderboardData = await db.collection('leaderboard').find({}).toArray();
+        const leaderboardData = await db.collection('leaderboard').find({}).sort({"points": -1}).limit(10).toArray();
         res.set('Access-Control-Allow-Origin', '*');
         res.status(200).json(leaderboardData);
         client.close();

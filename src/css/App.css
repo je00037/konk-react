@@ -166,7 +166,7 @@
 
 .leaders-list {
   font-family: "Luckiest Guy";
-  list-style-type: none;
+  /* list-style-type: none; */
   font-size: 1.5rem;
 }
 
@@ -177,6 +177,11 @@
 
 .modal-list-item {
   margin-bottom: 0.5rem;
+}
+
+.modal-list-item-leader {
+  margin-bottom: 0.5rem;
+  color: gold;
 }
 
 
