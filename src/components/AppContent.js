@@ -17,6 +17,11 @@ let usedQuotes = [];
 let questionsAsked = 0;
 let leaderboardData;
 
+const fetchData = async () => {
+  const result = await fetch('/leaderboard');
+  leaderboardData = await result.json();
+};
+
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
@@ -24,10 +29,6 @@ const AppContent = () => {
   const [scoresModalShow, setScoresModalShow] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch('/leaderboard');
-      leaderboardData = await result.json();
-    };
     fetchData();
   }, []);
 
@@ -84,6 +85,7 @@ const AppContent = () => {
 
   const handleScoresModal = () => {
     setScoresModalShow(!scoresModalShow);
+    fetchData();
   }
 
   return (
