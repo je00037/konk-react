@@ -40,6 +40,30 @@
   font-family: "Source Serif Pro";
   font-style: italic;
 }
+#name {
+  border-radius: 50px;
+  height: 2rem;
+  border: lightgrey;
+  width: 30%;
+  text-align: center;
+  font-family: "Luckiest Guy";
+  font-size: 1.25rem;
+}
+
+#name:focus {
+  box-shadow: 0 0 0 2pt rgb(20, 52, 164);
+  border-radius: 50px;
+  outline: none;
+  transition: 0.1s;
+}
+
+#name-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
 .Button {
   display: block;
@@ -70,6 +94,14 @@
   background-color: rgb(231, 71, 71);
 }
 
+.Button-grey {
+  background-color: grey;
+}
+
+.Button-blue {
+  background-color: rgb(20, 52, 164);
+}
+
 #author-label {
   height: 1rem;
   font-size: 1rem;
@@ -97,6 +129,61 @@
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: white;
+  border-radius: 2px;
+  width: 60%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.leaders-list {
+  font-family: "Luckiest Guy";
+  /* list-style-type: none; */
+  font-size: 1.5rem;
+}
+
+.modal-heading {
+  font-family: "Source Serif Pro";
+  font-style: italic;
+}
+
+.modal-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.modal-list-item-leader {
+  margin-bottom: 0.5rem;
+  color: gold;
+}
+
 
 @media only screen and (max-width: 1024px) {
   .Kev-container {
@@ -132,7 +219,12 @@
   }
  
   .Button-grey {
-    background-color: grey;
+    padding: 0.6rem 0.25rem 0.4rem 0.25rem;
+    margin-bottom: 0.5rem;
+    width: 20%;
+  }
+
+  .Button-blue {
     width: 20%;
     padding: 0.6rem 0.25rem 0.4rem 0.25rem;
     margin-bottom: 0.5rem;
@@ -198,9 +290,9 @@
     background-color: rgb(243, 189, 10);
   }
 
-  .Button-grey {
-    background-color: grey;
-    width: 20%;
+  .Button-grey, .Button-blue {
+    width: 30%;
+    max-width: 300px;
   }
 
   .Points-row {

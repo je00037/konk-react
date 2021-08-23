@@ -1,5 +1,5 @@
 import '../css/App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import KevContainer from './KevContainer.js';
 import QuoteContainer from './QuoteContainer.js';
 import StartButton from './StartButton.js';
@@ -7,16 +7,30 @@ import ItsKevButton from './ItsKevButton.js';
 import NotKevButton from './NotKevButton.js';
 import Points from './Points.js';
 import ResetButton from './ResetButton.js';
+import LeaderboardButton from './LeaderboardButton.js';
+import LeaderboardModal from './LeaderboardModal.js';
+import SubmitScore from './SubmitScore.js';
 import { newQuote, quotes } from '../utils/quoteGenerator';
 
 const placeholderQuote = {author: "Placeholder", quotation: "Hit the button to start."};
 let usedQuotes = [];
 let questionsAsked = 0;
+let leaderboardData;
+
+const fetchData = async () => {
+  const result = await fetch('/leaderboard');
+  leaderboardData = await result.json();
+};
 
 const AppContent = () => {
   const [quote, setQuote] = useState(placeholderQuote);
   const [status, setStatus] = useState("start");
   const [points, setPoints] = useState(0);
+  const [scoresModalShow, setScoresModalShow] = useState(false);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   if (status === "reset") {
     usedQuotes = [];
@@ -69,11 +83,18 @@ const AppContent = () => {
     }  
   }
 
+  const handleScoresModal = () => {
+    setScoresModalShow(!scoresModalShow);
+    fetchData();
+  }
+
   return (
     <>
+      {scoresModalShow ? <LeaderboardModal setDisplay={handleScoresModal} apiData={leaderboardData} /> : null}
       <div className="Points-row">
         <Points pointsProp={points} questionsAskedProp={questionsAsked} />
         <ResetButton clickHandler={handleResetClick} />
+        <LeaderboardButton showHide={handleScoresModal} />
       </div>
       <div className='App-content'>
         <div className='Kev-container'>
@@ -81,6 +102,7 @@ const AppContent = () => {
         </div>
       <div className="Quote-container">
         <QuoteContainer statusProp={status} quoteProp={quote} pointsProp={points} />
+        {status === "end" ? <SubmitScore points={points} /> : null}
         <StartButton statusProp={status} clickHandler={handleStartClick} resetClickHandler={handleResetClick} />
         <ItsKevButton statusProp={status} clickHandler={handleGuessClick} />
         <NotKevButton statusProp={status} clickHandler={handleGuessClick} />
