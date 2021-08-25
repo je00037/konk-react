@@ -83,9 +83,9 @@ const AppContent = () => {
     }  
   }
 
-  const handleScoresModal = () => {
+  const handleScoresModal = async () => {
+    await fetchData();
     setScoresModalShow(!scoresModalShow);
-    fetchData();
   }
 
   return (
