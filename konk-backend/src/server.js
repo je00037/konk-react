@@ -1,9 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
+import path from 'path';
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
 
 app.get('/leaderboard', async (req, res) => {
@@ -38,5 +40,9 @@ app.post('/leaderboard', async (req, res) => {
         res.status(500).json({ message: "error!", error})
     }
 });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+})
 
 app.listen(8000, () => console.log("listening on port 8000"));
